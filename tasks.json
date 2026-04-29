@@ -1,8 +1,46 @@
 {
   "tasks": [
-    { "id": 1, "name": "Install", "priority": 1, "depends_on": [], "duration_ms": 1000 },
-    { "id": 2, "name": "Backend", "priority": 2, "depends_on": [1], "duration_ms": 800 },
-    { "id": 3, "name": "Frontend", "priority": 1, "depends_on": [1], "duration_ms": 500 },
-    { "id": 4, "name": "Deploy", "priority": 3, "depends_on": [2, 3], "duration_ms": 700 }
+    {
+      "id": "T1",
+      "name": "Setup Project",
+      "priority": 1,
+      "depends_on": [],
+      "duration_ms": 1000
+    },
+    {
+      "id": "T2",
+      "name": "Install Dependencies",
+      "priority": 2,
+      "depends_on": ["T1"],
+      "duration_ms": 1500
+    },
+    {
+      "id": "T3",
+      "name": "Build Backend",
+      "priority": 1,
+      "depends_on": ["T2"],
+      "duration_ms": 2000
+    },
+    {
+      "id": "T4",
+      "name": "Build Frontend",
+      "priority": 2,
+      "depends_on": ["T2"],
+      "duration_ms": 1800
+    },
+    {
+      "id": "T5",
+      "name": "Run Tests",
+      "priority": 1,
+      "depends_on": ["T3", "T4"],
+      "duration_ms": 1200
+    },
+    {
+      "id": "T6",
+      "name": "Deploy Application",
+      "priority": 1,
+      "depends_on": ["T5"],
+      "duration_ms": 1000
+    }
   ]
 }
