@@ -1,0 +1,8 @@
+{
+  "tasks": [
+    { "id": 1, "name": "Install", "priority": 1, "depends_on": [], "duration_ms": 1000 },
+    { "id": 2, "name": "Backend", "priority": 2, "depends_on": [1], "duration_ms": 800 },
+    { "id": 3, "name": "Frontend", "priority": 1, "depends_on": [1], "duration_ms": 500 },
+    { "id": 4, "name": "Deploy", "priority": 3, "depends_on": [2, 3], "duration_ms": 700 }
+  ]
+}
